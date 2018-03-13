@@ -19,7 +19,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
         android:id="@+id/appNameTextView"
-        android:text="MyRestaurants"
+        android:text="My Restaurants"
         android:textSize="45sp"
         android:textColor="@color/colorTextIcons" />
 
