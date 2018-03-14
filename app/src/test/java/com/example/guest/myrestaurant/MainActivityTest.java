@@ -8,14 +8,13 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
-import org.robolectric.RobolectricGradleTestRunner;
-import org.robolectric.annotation.Config;
+import org.robolectric.RobolectricTestRunner;
 import org.robolectric.shadows.ShadowActivity;
 
 import static junit.framework.Assert.assertTrue;
 
-@Config(constants = BuildConfig.class, sdk = Build.VERSION_CODES.LOLLIPOP)
-@RunWith(RobolectricGradleTestRunner.class)
+
+@RunWith(RobolectricTestRunner.class)
 /**
  * Created by Guest on 3/12/18.
  */
@@ -30,7 +29,7 @@ public class MainActivityTest {
     @Test
     public void validateTextViewContent() {
         TextView appNameTextView = (TextView) activity.findViewById(R.id.appNameTextView);
-        assertTrue("MyRestaurants".equals(appNameTextView.getText().toString()));
+        assertTrue("My Restaurants".equals(appNameTextView.getText().toString()));
     }
 
     @Test
