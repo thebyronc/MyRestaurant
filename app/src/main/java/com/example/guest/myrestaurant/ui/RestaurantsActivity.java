@@ -71,6 +71,14 @@ public class RestaurantsActivity extends AppCompatActivity {
                     }
 
                 });
+
+                for (Restaurant restaurant : restaurants) {
+                    String imageUrl = restaurant.getImageUrl();
+                    String largeImageUrl = imageUrl.substring(0, imageUrl.length() - 5).concat("o.jpg");
+                    Log.d(TAG, "Small Image url: " + imageUrl);
+                    Log.d(TAG, "Large Image url: " + largeImageUrl);
+
+                }
             }
 
         });
