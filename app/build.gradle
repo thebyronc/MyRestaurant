@@ -26,6 +26,9 @@ android {
             includeAndroidResources = true
         }
     }
+    buildTypes.each {
+        it.buildConfigField 'String', 'YELP_TOKEN', YelpToken
+    }
 }
 
 dependencies {
@@ -43,4 +46,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     testImplementation "org.robolectric:robolectric:3.7.1"
     testCompile 'org.robolectric:shadows-support-v4:3.0'
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile 'com.android.support:recyclerview-v7:+'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
 }
