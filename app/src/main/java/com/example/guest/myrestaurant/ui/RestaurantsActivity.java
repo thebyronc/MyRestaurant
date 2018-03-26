@@ -1,6 +1,8 @@
 package com.example.guest.myrestaurant.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.guest.myrestaurant.Constants;
 import com.example.guest.myrestaurant.R;
 import com.example.guest.myrestaurant.adapters.RestaurantListAdapter;
 import com.example.guest.myrestaurant.models.Restaurant;
@@ -29,6 +32,9 @@ public class RestaurantsActivity extends AppCompatActivity {
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
     private RestaurantListAdapter mAdapter;
 
+//    private SharedPreferences mSharedPreferences;
+//    private String mRecentAddress;
+
     public static final String TAG = RestaurantsActivity.class.getSimpleName();
 
     public ArrayList<Restaurant> restaurants = new ArrayList<>();
@@ -43,6 +49,12 @@ public class RestaurantsActivity extends AppCompatActivity {
         String location = intent.getStringExtra("location");
 
         getRestaurants(location);
+
+//        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+//        mRecentAddress = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
+//        if (mRecentAddress != null) {
+//            getRestaurants(mRecentAddress);
+//        }
     }
 
     private void getRestaurants(String location) {
