@@ -16,6 +16,7 @@ public class Restaurant {
     private double latitude;
     private double longitude;
     private List<String> categories = new ArrayList<>();
+    private String pushId;
 
     public Restaurant() {}
     public Restaurant(String name, String phone, String website,
@@ -72,4 +73,13 @@ public class Restaurant {
         String largeImageUrl = imageUrl.substring(0, imageUrl.length() - 5).concat("o.jpg");
         return largeImageUrl;
     }
+
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
+    }
+
 }
